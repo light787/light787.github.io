@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+body{
+    background:#1D1D1D;
+}
+.container {
+    margin: 40px auto;
+    width: 600px;
+}
+
+#tachometer{
+    background:#171717;
+    margin:100px auto;
+    width:600px;
+    height:600px;
+    box-shadow: inset 0px 0px 9px 3px rgba(0, 0, 0, 1);
+    border: 5px solid #171717;
+    border-radius: 100%;
+    display: block;
+    position: relative;  
+}
+  a{
+    text-decoration: none;
+    color:green;
+  }
+  a:hover{
+    color: red;
+  }
+.ii {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    /* z-index: -2; */
+    
+}
+.ii div {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    padding:4px;
+    box-sizing: border-box;
+}
+.ii div b {
+    position: absolute;
+    display: block;
+    left: 50%;
+    width: 5px;
+    height: 20px;
+    background: #FFF;
+    margin: 0 -5px 0;
+    
+}
+.ii div:nth-child(2n+1) b {
+    width: 10px;
+    height: 35px;
+    margin: 0 -5px 0;
+}
+
+.ii div:nth-child(1) {
+  transform: rotate(240deg);
+    width: auto;
+    height: auto;
+    top: 448px;
+    left: 47px;
+}
+.ii div:nth-child(2) {
+  transform: rotate(255deg);
+    width: auto;
+    height: auto;
+    top: 372px;
+    left: 16px;
+}
+.ii div:nth-child(3) {
+  transform: rotate(270deg);
+    width: auto;
+    height: auto;
+    top: 303px;
+    left: 0px;
+}
+.ii div:nth-child(4) {
+    transform: rotate(285deg);
+    width: auto;
+    height: auto;
+    top: 225px;
+    left: 13px;
+}
+.ii div:nth-child(5) {
+    transform: rotate(300deg);
+    width: auto;
+    height: auto;
+    top: 150px;
+    left: 42px;
+}
+.ii div:nth-child(6) {
+    transform: rotate(315deg);
+    width: auto;
+    height: auto;
+    top: 90px;
+    left: 89px;
+}
+.ii div:nth-child(7) {
+    transform: rotate(330deg);
+    width: auto;
+    height: auto;
+    top: 41px;
+    left: 147px;
+}
+.ii div:nth-child(8) {
+    transform: rotate(345deg);
+    width: auto;
+    height: auto;
+    top: 11px;
+    left: 216px;
+}
+.ii div:nth-child(9) {
+    transform: rotate(0deg);/*---*/
+    width: auto;
+    height: auto;
+    top: 0px;
+    left: 284px;
+}
+.ii div:nth-child(10) {
+    transform: rotate(15deg);
+    width: auto;
+    height: auto;
+    top: 9px;
+    left: 370px;
+}
+.ii div:nth-child(11) {
+    transform: rotate(30deg);
+    width: auto;
+    height: auto;
+    top: 35px;
+    left: 434px;
+}
+.ii div:nth-child(12) {
+    transform: rotate(45deg);
+    width: auto;
+    height: auto;
+    top: 85px;
+    left: 500px;
+}
+.ii div:nth-child(13) {
+    transform: rotate(60deg);
+    width: auto;
+    height: auto;
+    top: 148px;
+    left: 548px;
+}
+.ii div:nth-child(14) {
+    transform: rotate(75deg);
+    width: auto;
+    height: auto;
+    top: 216px;
+    left: 577px;
+}
+.ii div:nth-child(15) {
+    transform: rotate(90deg);
+    width: auto;
+    height: auto;
+    top: 216px;
+    left: 577px;
+    display: none;
+}
+.ii div:nth-child(16) {
+    transform: rotate(105deg);
+    display: none;
+}
+.ii div:nth-child(17) {
+    transform: rotate(120deg);
+    display: none;
+}
+
+
+[class^="num_"] {
+    color:#FFF;
+    display: block;
+    position: absolute;
+    width: 10px;
+    /* font-size:40px; */
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration:none;
+    
+      
+}
+
+.num_1 {transform: rotate(120deg); top:30px;}
+.num_2 {transform: rotate(90deg); top:13px; left:5px}
+.num_3 {transform: rotate(60deg); top:5vh;}
+.num_4 {transform: rotate(30deg); top:25px;}
+.num_5 {transform: rotate(0deg);
+    top: 6vh;
+    /* left: 0px; */
+    
+    left: -4vh;}
+.num_6 {transform: rotate(330deg); top:35px;left:-10px}
+.num_7 {transform: rotate(300deg);
+    top: 12vh;
+    left: -4vh;}
+.num_8 {transform: rotate(270deg);top:30px;}
+.num_9 {transform: rotate(240deg);top:30px;left:8px}
+
+#redline{     
+    width:28px; height:150px;
+    position:absolute;
+    top:272px;
+    right:12px;
+    border-width: 22px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color:#171717 #F14134 #171717 #171717;
+    transform:rotate(15deg);
+    z-index:1
+    }
+
+
+.line {
+
+    
+    background: #F14134;
+    background-image: linear-gradient(to bottom, #F14134, #343536);
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 0;
+    transform-origin: 50% 100%;
+    margin: -285px -8px 0;
+    padding: 285px 8px 0;
+    z-index:2;
+    border-radius: 50% 50% 0 0;    
+    /* transform:rotate(-95deg); */
+    transform: rotate(-140deg);
+    
+    
+    animation: pendulum;
+    /* animation-iteration-count: ease-in-out; */
+    animation-duration: 4s;
+  
+        
+}
+
+.pin {
+    width: 50px;
+    height: 50px;
+    left:50%;
+    top:50%;
+    margin: -25px 0 0 -25px;
+    background-color: #343536;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to bottom, #F14134, #343536);
+    z-index: 4;
+}
+
+
+.inner {
+    width: 30px;
+    height: 30px;
+    margin: 10px auto 0;
+    background-color: #343536;
+    border-radius: 100%;
+    box-shadow: inset 0 8px 15px 0 rgba(167, 23, 10, 0.4);
+    position: relative;
+}
+
+
+@keyframes pendulum {
+    10% {
+        transform:rotate(100deg);
+    }
+
+   
+    /* 11% {
+        transform:rotate(98deg);
+    }
+    12% {
+        transform:rotate(96deg);
+    }
+    13% {
+        transform:rotate(98deg);
+    }
+    14% {
+        transform:rotate(96deg);
+    }
+    15% {
+        transform:rotate(98deg);
+    }
+    16% {
+        transform:rotate(96deg);
+    }
+    17% {
+        transform:rotate(98deg);
+    }
+    18% {
+        transform:rotate(96deg);
+    }
+    19% {
+        transform:rotate(98deg);
+    } */
+    
+ 
+   
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div id="tachometer">
+                <div class="ii">
+                    <div class="service_advisor"><b><span class="num_1"><a href="./ex.html">Service Advisor</a> </span></b></div>
+                    <div><b></b></div>
+                    <div><b><span class="num_2"></span></b></div>
+                    <div><b></b></div>
+                    <div class="mechanic"><b><span class="num_3"><a href="./ex.html">Mechanic</a> </span></b></div>
+                    <div><b></b></div>
+                    <div><b><span class="num_4"></span></b></div>
+                    <div><b></b></div>
+                    <div class="foreman"><b><span class="num_5"><a href="./ex.html">Foreman</a> </span></b></div>
+                    <div><b></b></div>
+                    <div><b><span class="num_6"></span></b></div>
+                    <div><b></b></div>
+                    <div class="service_manager"><b><span class="num_7"><a href="./ex.html"> Service Manager</a></span></b></div>
+                    <div><b></b></div>
+                    <div><b><span class="num_8">7</span></b></div>
+                    <div><b></b></div>
+                    <div><b><span class="num_9"></span></b></div>
+                </div> 
+              <div id="redline"></div>
+        <div class="line"></div>
+       <div class="pin"><div class="inner"></div></div> 
+  </div>
+</div>
+<script> 
+  let serviceAdvisor=document.querySelector('.num_9');
+  serviceAdvisor.addEventListener('mousedown',(e)=>{
+    console.log(e)
+  })
+</script>
+</body>
+</html>
